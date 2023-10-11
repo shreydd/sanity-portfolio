@@ -29,9 +29,9 @@ const Home = async () => {
                   <Image
                   src={project.image}
                   alt={project.alt}
-                  width={750}
-                  height={500}
-                  className=" object-cover rounded-lg border border-gray-200 "
+                  width={450}
+                  height={80}
+                  className=" max-h-[150px] object-cover rounded-lg border border-gray-200 "
                   />
                   )
                 }
