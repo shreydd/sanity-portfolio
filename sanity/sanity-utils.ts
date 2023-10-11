@@ -13,7 +13,8 @@ export async function getProjects(): Promise<Project[]> {
             "image": image.asset->url,
             alt,
             url,
-            content
+            content,
+            overview
           }`
     );
 }
@@ -28,7 +29,8 @@ export async function getSingleProject(slug: string): Promise<Project> {
             "image": image.asset->url,
             alt,
             url,
-            content
+            content,
+            overview
           }`,
           {slug}
     );
