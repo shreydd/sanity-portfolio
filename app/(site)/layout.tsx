@@ -22,7 +22,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="max-w-7xl px-2 mx-auto py-20">
+      <body className="max-w-7xl px-4 mx-auto py-20">
         <header className='flex justify-between items-center'>
           <Link href="/" className='bg-gradient-to-r from-orange-200 via-orange-300 to-orange-500 bg-clip-text text-transparent text-lg font-bold'>Shreyas</Link>
 
@@ -38,6 +38,17 @@ export default async function RootLayout({
         <main className='py-20'>
           {children}
         </main>
+
+        <footer>
+            <div className="flex items-center justify-center gap-3">
+              <a href="mailto:shreyasramesh08@gmail.com" target='_blank' className="text-gray-400 hover:underline">Email</a>
+              <a href="https://www.linkedin.com/in/shreyr" target='_blank' className="text-gray-400 hover:underline">Linkedin</a>
+              <a href="https://peerlist.io/shreyas" target='_blank' className="text-gray-400 hover:underline">Peerlist</a>
+              <a href="https://github.com/shreydd" target='_blank' className="text-gray-400 hover:underline">Github</a>
+              <a href="https://blogorithm.hashnode.dev/" target='_blank' className="text-gray-400 hover:underline">Hashnode</a>
+              <a href="https://factored.substack.com/" target='_blank' className="text-gray-400 hover:underline">Substack</a>
+            </div>
+        </footer>
       </body>
     </html>
   )

@@ -13,7 +13,7 @@ const Home = async () => {
         Hello! <span className=" bg-gradient-to-r from-orange-200 via-orange-300 to-orange-500 bg-clip-text text-transparent">I&apos;m Shreyas </span>
       </h1>
 
-      <p className="mt-10 text-xl text-gray-600">I write code, think about products and create solutions</p>
+      <p className="mt-10 text-xl text-gray-600">I write code, think about products and create digital solutions</p>
       <p className="mt-1 text-xl text-gray-600">Currently Software Developer at <a href="https://ownpath.com/" target="_blank" className="underline ">ownpath</a></p>
 
       <h2 className="mt-24 font-bold text-gray-700 text-3xl">My projects</h2>
