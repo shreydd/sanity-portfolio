@@ -1,10 +1,12 @@
-import { getProjects } from "@/sanity/sanity-utils"
+import { getProjects, getWritings } from "@/sanity/sanity-utils"
 import Image from "next/image";
 import Link from "next/link";
 
 const Home = async () => {
 
   const projects = await getProjects();
+  const writings = await getWritings();
+
   return (
     <div>
       <h1 className="text-7xl font-extrabold">
@@ -45,6 +47,15 @@ const Home = async () => {
               </Link>
             )
           })
+        }
+      </div>
+
+      <h2 className="mt-24 font-bold text-gray-700 text-3xl">My writings</h2>
+      <div className="mt-5 flex flex-col gap-2">
+        {
+          writings.map(writing => (
+            <p> <a href={writing.url} key={writing._id} className="border-b border-orange-200 text-base" target="_blank">{writing.name}↗</a></p>
+          ))
         }
       </div>
     </div>

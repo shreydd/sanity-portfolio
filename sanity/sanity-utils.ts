@@ -2,6 +2,7 @@ import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Writing } from "@/types/Writing";
 
 export async function getProjects(): Promise<Project[]> {
     return createClient(clientConfig).fetch(
@@ -58,4 +59,20 @@ export async function getSinglePage(slug: string):Promise<Page>{
         }`,
         {slug}
     )
+}
+
+export async function getWritings(): Promise<Writing[]> {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == "writing"]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            "image": image.asset->url,
+            alt,
+            url,
+            content,
+            overview
+          }`
+    );
 }
