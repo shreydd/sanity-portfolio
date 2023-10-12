@@ -54,7 +54,7 @@ const Home = async () => {
       <div className="mt-5 flex flex-col gap-2">
         {
           writings.map(writing => (
-            <p key={writing._id}> <a href={writing.url} className="border-b border-orange-200 text-base" target="_blank">{writing.name}↗</a></p>
+            <p key={writing._id}> <a href={writing.url} className="border-b border-orange-200 text-base" target="_blank">{writing.name}</a></p>
           ))
         }
       </div>
