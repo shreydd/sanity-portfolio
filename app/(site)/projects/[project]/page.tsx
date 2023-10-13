@@ -14,20 +14,37 @@ export default async function Project({ params }: Props) {
     return (
         <>
             <div>
-                <header className="flex justify-between items-center">
+                <header className="flex justify-between items-start md:items-center flex-col md:flex-row">
                     <h1 className="bg-gradient-to-r from-orange-200 via-orange-400 to-orange-500 bg-clip-text text-transparent text-5xl leading-snug drop-shadow font-extrabold">{project.name}</h1>
-                    <a href={project.url}
-                        title="View project"
-                        target="_blank"
-                        className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-orange-500 hover:text-white transition"
-                        rel="noopener norefferrer"
-                    >
-                        View project
-                    </a>
+
+                    <div className="flex gap-2 items-center mt-3">
+                        <a href={project.url}
+                            title="View project"
+                            target="_blank"
+                            className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-orange-500 hover:text-white transition"
+                            rel="noopener norefferrer"
+                        >
+                            View project
+                        </a>
+                        {
+                            project.github
+                            ?
+                            <a href={project.github}
+                                title="View project"
+                                target="_blank"
+                                className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-black hover:text-white transition"
+                                rel="noopener norefferrer"
+                            >
+                                Github
+                            </a>
+                            :
+                            <></>
+                        }
+                    </div>
                 </header>
 
                 {/* overview */}
-                <div className="mt-5 text-lg text-gray-700 max-w-lg">
+                <div className="mt-8 text-lg text-gray-700 max-w-lg">
                     {project.overview}
                 </div>
 

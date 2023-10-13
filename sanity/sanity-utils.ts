@@ -31,7 +31,8 @@ export async function getSingleProject(slug: string): Promise<Project> {
             alt,
             url,
             content,
-            overview
+            overview,
+            github
           }`,
           {slug}
     );

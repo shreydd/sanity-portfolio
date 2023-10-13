@@ -9,6 +9,7 @@ export type Project = {
     overview: string;
     image: string;
     url: string;
+    github: string;
     alt: string;
     content: PortableTextBlock[]; // rich text
 }
