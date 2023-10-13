@@ -26,9 +26,9 @@ export default async function Project({ params }: Props) {
                     </a>
                 </header>
 
-                {/* content */}
-                <div className="mt-5 text-lg text-gray-700 ">
-                    <PortableText value={project.content} />
+                {/* overview */}
+                <div className="mt-5 text-lg text-gray-700 max-w-lg">
+                    {project.overview}
                 </div>
 
                 {/* images */}
@@ -39,6 +39,11 @@ export default async function Project({ params }: Props) {
                     height={1080}
                     className="mt-10 object-cover rounded-lg border border-gray-200 "
                 />
+
+                {/* content */}
+                <div className="mt-5 text-lg text-gray-700 prose lg:prose-xl">
+                    <PortableText value={project.content} />
+                </div>
             </div>
         </>
     )
