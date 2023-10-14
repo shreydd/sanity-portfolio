@@ -46,8 +46,9 @@ const page = {
                               },
                     
                         ]
-                      } 
-                }
+                    } 
+                },
+                {type: 'image'}
             ]
         }
     ]

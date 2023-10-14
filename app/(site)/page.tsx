@@ -1,11 +1,13 @@
-import { getProjects, getWritings } from "@/sanity/sanity-utils"
+import { getProjects, getSkills, getWritings } from "@/sanity/sanity-utils"
 import Image from "next/image";
 import Link from "next/link";
+import { Skill } from "@/types/Skill";
 
 const Home = async () => {
 
   const projects = await getProjects();
   const writings = await getWritings();
+  const skills = await getSkills();
 
   return (
     <div>
@@ -15,6 +17,22 @@ const Home = async () => {
 
       <p className="mt-10 text-xl text-gray-600">I write code, think about products and create digital solutions</p>
       <p className="mt-1 text-xl text-gray-600">Currently Software Developer at <a href="https://ownpath.com/" target="_blank" className="underline ">ownpath</a></p>
+      
+      <div className="mt-6 py-2 flex overflow-x-scroll md:overflow-auto md:flex-wrap gap-3 md:max-w-3xl">
+        {
+          skills.map((skill: Skill) => (
+            <p key={skill._id} className="flex py-2 text-gray-500 px-6 border rounded-full gap-2 text-xs items-center justify-center">
+              <Image 
+                src={skill.image} 
+                alt={skill.alt} 
+                width={16} 
+                height={16}
+              />
+              {skill.name}
+            </p>
+          ))
+        }
+      </div>
 
       <h2 className="mt-24 font-bold text-gray-700 text-3xl">My projects</h2>
 
