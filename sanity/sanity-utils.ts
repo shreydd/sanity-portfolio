@@ -86,7 +86,11 @@ export async function getSkills(): Promise<Skill[]> {
             _createdAt,
             name,
             "image": image.asset->url,
-            alt
+            alt,
+            project[] -> {
+                name,
+                "slug": slug.current
+            }
         }`
     )
 }

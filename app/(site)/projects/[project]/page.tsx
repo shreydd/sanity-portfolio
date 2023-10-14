@@ -1,4 +1,6 @@
-import { getSingleProject } from "@/sanity/sanity-utils";
+import SkillsComp from "@/app/components/SkillsComp";
+import { getSingleProject, getSkills } from "@/sanity/sanity-utils";
+import { Skill } from "@/types/Skill";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
@@ -11,6 +13,20 @@ export default async function Project({ params }: Props) {
     const slug = params.project;
     const project = await getSingleProject(slug);
 
+    const skills = await getSkills();
+    const filteredSkills: any = []
+
+    // filter skills
+    skills.map((skill: Skill) => {
+        if (skill?.project) {
+            skill?.project.map((item: any) => {
+                if (item.slug == slug) {
+                    filteredSkills.push(skill)
+                }
+            })
+        }
+    })
+
     return (
         <>
             <div>
@@ -21,24 +37,24 @@ export default async function Project({ params }: Props) {
                         <a href={project.url}
                             title="View project"
                             target="_blank"
-                            className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-orange-500 hover:text-white transition"
+                            className="bg-gray-100 rounded-lg text-xs text-gray-500 font-semibold py-3 px-4 whitespace-nowrap hover:bg-orange-500 hover:text-white transition"
                             rel="noopener norefferrer"
                         >
                             View project
                         </a>
                         {
                             project.github
-                            ?
-                            <a href={project.github}
-                                title="View project"
-                                target="_blank"
-                                className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-black hover:text-white transition"
-                                rel="noopener norefferrer"
-                            >
-                                Github
-                            </a>
-                            :
-                            <></>
+                                ?
+                                <a href={project.github}
+                                    title="View project"
+                                    target="_blank"
+                                    className="bg-gray-100 rounded-lg text-xs text-gray-500 font-semibold py-3 px-4 whitespace-nowrap hover:bg-black hover:text-white transition"
+                                    rel="noopener norefferrer"
+                                >
+                                    {`</>`}
+                                </a>
+                                :
+                                <></>
                         }
                     </div>
                 </header>
@@ -47,6 +63,9 @@ export default async function Project({ params }: Props) {
                 <div className="mt-8 text-lg text-gray-700 max-w-lg">
                     {project.overview}
                 </div>
+
+                {/* skills ist */}
+                <SkillsComp skillsList={filteredSkills} />
 
                 {/* images */}
                 <Image

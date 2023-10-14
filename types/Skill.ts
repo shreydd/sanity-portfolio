@@ -4,5 +4,8 @@ export type Skill = {
     name: string;
     image: string;
     alt: string;
-    project: string[];
+    project:Array<{
+        name: string | null;
+        slug: string | null;
+    }> | null;
 }
