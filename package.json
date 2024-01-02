@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && sanity deploy"
+    "deploy": "next build && sanity login && sanity deploy"
   },
   "dependencies": {
     "@portabletext/react": "^3.0.11",
