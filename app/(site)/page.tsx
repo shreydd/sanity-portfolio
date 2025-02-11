@@ -18,7 +18,7 @@ const Home = async () => {
       </h1>
 
       <p className="mt-10 text-xl text-gray-600">I write code, think about products and create digital solutions</p>
-      <p className="mt-1 text-xl text-gray-600">Currently Fullstack Developer at <a href="https://roboto.studio/" target="_blank" className="underline ">Roboto Studio</a></p>
+      {/* <p className="mt-1 text-xl text-gray-600">Currently Fullstack Developer at <a href="https://roboto.studio/" target="_blank" className="underline ">Roboto Studio</a></p> */}
       
       {/* skills */}
       <SkillsComp skillsList={skills} />
