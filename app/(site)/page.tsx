@@ -38,7 +38,7 @@ const Home = async () => {
                   project.image && (
                     <Image
                       src={project.image}
-                      alt={project.alt}
+                      alt={project.alt ?? "project image"}
                       width={450}
                       height={80}
                       className=" max-h-[150px] object-cover rounded-lg border border-gray-200 "

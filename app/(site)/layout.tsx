@@ -45,7 +45,7 @@ export default async function RootLayout({
               <a href="https://www.linkedin.com/in/shreyr" target='_blank' className="text-gray-400 hover:underline">Linkedin</a>
               <a href="https://peerlist.io/shreyas" target='_blank' className="text-gray-400 hover:underline">Peerlist</a>
               <a href="https://github.com/shreydd" target='_blank' className="text-gray-400 hover:underline">Github</a>
-              <a href="https://blogorithm.hashnode.dev/" target='_blank' className="text-gray-400 hover:underline">Hashnode</a>
+              <a href="https://shreyasr.hashnode.dev/" target='_blank' className="text-gray-400 hover:underline">Hashnode</a>
               <a href="https://factored.substack.com/" target='_blank' className="text-gray-400 hover:underline">Substack</a>
               <a href="https://calendly.com/shreyasr/30min" target='_blank' className="text-gray-400 hover:underline">Calendly</a>
             </div>
