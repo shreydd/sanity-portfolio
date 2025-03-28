@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SkillsComp from "../components/SkillsComp";
 
+// Force server-side rendering and disable caching
+export const dynamic = 'force-dynamic';
+
 const Home = async () => {
 
   const projects = await getProjects();
